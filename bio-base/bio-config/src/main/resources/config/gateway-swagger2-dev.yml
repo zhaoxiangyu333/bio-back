@@ -1,0 +1,37 @@
+server:
+  port: 20104
+spring:
+  application:
+    name: gateway-swagger2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:20101/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+    status-page-url: http://127.0.0.1:${server.port}/swagger-ui.html
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+
+zuul:
+  prefix: /api # 添加路由前缀
+  retryable: true
+  routes:
+    category:
+      path: /category/**
+    product:
+      path: /product/**
+    specificate:
+      path: /specificate/**
+    brand:
+      path: /brand/**
+    user:
+      path: /user/**

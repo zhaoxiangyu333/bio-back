@@ -1,0 +1,38 @@
+{
+  "name" : "BioCategory",
+  "comment" : "bio_category 商品分类表",
+  "fullColumn" : [ {
+    "name" : "id",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "categoryName",
+    "comment" : "商品分类名称",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "categoryParentId",
+    "comment" : "商品分类父id",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "categoryIsParent",
+    "comment" : "商品分类是否为父类 0不是父类---1是父类",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "cn.blz",
+  "savePath" : "./bio-service/bio-service-category/src/main/java/cn/blz",
+  "saveModelName" : "bioservicecategory"
+}

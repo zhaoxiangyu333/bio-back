@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-base/bio-base-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-base/bio-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-gateway-swagger2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-address" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-brand" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-category" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-specificate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-service/bio-service-user" charset="UTF-8" />
+  </component>
+</project>

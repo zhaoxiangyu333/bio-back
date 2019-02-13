@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="biobaseeureka" />
+        <module name="biocommon" />
+        <module name="bioconfig" />
+        <module name="biogateway" />
+        <module name="biogatewayswagger2" />
+        <module name="bioserviceaddress" />
+        <module name="bioservicebrand" />
+        <module name="bioservicecategory" />
+        <module name="bioserviceorder" />
+        <module name="bioserviceproduct" />
+        <module name="bioservicespecificate" />
+        <module name="bioserviceuser" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bioeureka" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bioback" options="-parameters" />
+      <module name="biobase" options="-parameters" />
+      <module name="biobaseeureka" options="-parameters" />
+      <module name="biocommon" options="-parameters" />
+      <module name="bioconfig" options="-parameters" />
+      <module name="bioeureka" options="-parameters" />
+      <module name="biogateway" options="-parameters" />
+      <module name="biogatewayswagger2" options="-parameters" />
+      <module name="bioservice" options="-parameters" />
+      <module name="bioserviceaddress" options="-parameters" />
+      <module name="bioservicebrand" options="-parameters" />
+      <module name="bioservicecategory" options="-parameters" />
+      <module name="bioserviceorder" options="-parameters" />
+      <module name="bioserviceproduct" options="-parameters" />
+      <module name="bioservicespecificate" options="-parameters" />
+      <module name="bioserviceuser" options="-parameters" />
+    </option>
+  </component>
+</project>

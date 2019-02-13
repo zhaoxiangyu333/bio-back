@@ -1,0 +1,19 @@
+server:
+  port: 20102
+
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:config
+  application:
+    name: config
+  profiles:
+    # 配置使用本地储存
+    active: native
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:20101/eureka

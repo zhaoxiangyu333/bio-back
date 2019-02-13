@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.blz.dao.BioSpecificateValueDao">
+
+    <resultMap type="cn.blz.entity.BioSpecificateValue" id="BioSpecificateValueMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="specificateId" column="specificate_id" jdbcType="INTEGER"/>
+        <result property="specificateValue" column="specificate_value" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

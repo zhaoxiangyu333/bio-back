@@ -1,0 +1,24 @@
+{
+  "name" : "BioSpecificate",
+  "comment" : "bio_specificate 商品规格表",
+  "fullColumn" : [ {
+    "name" : "id",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "name",
+    "comment" : "商品规格名称",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "cn.blz",
+  "savePath" : "./bio-service/bio-service-specificate/src/main/java/cn/blz",
+  "saveModelName" : "bioservicespecificate"
+}
