@@ -60,8 +60,16 @@
 
 ### 项目结构图
 
+<<<<<<< HEAD
 ![](bio-back.png)
 
 ###
 
 ####
+=======
+![](https://blzcatblogsimg-1255544391.cos.ap-shanghai.myqcloud.com/bio-back.png)
+
+### 
+
+#### 
+>>>>>>> origin/master
