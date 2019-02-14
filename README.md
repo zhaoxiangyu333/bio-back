@@ -12,22 +12,22 @@
 
 ```
 .
-├── bio-base						基础包
-│   ├── bio-base-eureka				 -注册中心
-│   └── bio-config					 -配置中心
-├── bio-common						通用工具
-├── bio-gateway						网关
-├── bio-gateway-swagger2			网关(swagger2)
-├── bio-recommend					商品推荐
-├── bio-search						搜索Elasticsearch
-└── bio-service						服务
-    ├── bio-service-address			 -收货地址
-    ├── bio-service-brand			 -品牌
-    ├── bio-service-category		 -失效
-    ├── bio-service-order			 -订单
-    ├── bio-service-product			 -商品
-    ├── bio-service-specificate		 -属性
-    └── bio-service-user			 -用户
+├── bio-base 基础包
+│   ├── bio-base-eureka 注册中心
+│   └── bio-config 配置中心
+├── bio-common 通用工具
+├── bio-gateway 网关
+├── bio-gateway-swagger2 网关(swagger2)
+├── bio-recommend 商品推荐
+├── bio-search 搜索Elasticsearch
+└── bio-service 服务
+    ├── bio-service-address 收货地址
+    ├── bio-service-brand 品牌
+    ├── bio-service-category 失效
+    ├── bio-service-order 订单
+    ├── bio-service-product 商品
+    ├── bio-service-specificate 属性
+    └── bio-service-user 用户
 ```
 
 ### 端口设计
