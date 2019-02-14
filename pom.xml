@@ -15,6 +15,7 @@
         <module>bio-base</module>
         <module>bio-common</module>
         <module>bio-search</module>
+        <module>bio-recommend</module>
     </modules>
 
     <name>bio-back</name>
