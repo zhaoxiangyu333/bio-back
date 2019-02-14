@@ -60,4 +60,4 @@
 
 ### 项目结构图
 
-![](bio-back.png)
+![](./bio-back.png)
