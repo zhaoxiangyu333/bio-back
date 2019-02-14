@@ -11,6 +11,7 @@
         <module name="bioconfig" />
         <module name="biogateway" />
         <module name="biogatewayswagger2" />
+        <module name="biosearch" />
         <module name="bioserviceaddress" />
         <module name="bioservicebrand" />
         <module name="bioservicecategory" />
@@ -34,6 +35,7 @@
       <module name="bioeureka" options="-parameters" />
       <module name="biogateway" options="-parameters" />
       <module name="biogatewayswagger2" options="-parameters" />
+      <module name="biosearch" options="-parameters" />
       <module name="bioservice" options="-parameters" />
       <module name="bioserviceaddress" options="-parameters" />
       <module name="bioservicebrand" options="-parameters" />

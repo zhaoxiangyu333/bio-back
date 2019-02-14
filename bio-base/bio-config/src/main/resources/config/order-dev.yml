@@ -74,3 +74,17 @@ mybatis-plus:
       logic-not-delete-value: 1
       id-type: auto
       capital-mode: true
+#bio:
+#  jwt:
+#    pubKeyPath: /Users/bystander/id_rsa.pub # 公钥地址
+#    cookieName: LY_TOKEN # cookie的名称
+#  worker:
+#    workerId: 1
+#    dataCenterId: 1
+#  pay:
+#    appId: wx8397f8696b538317
+#    mchId: 1473426802
+#    key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+#    connectTimeoutMs: 5000
+#    readTimeoutMs: 10000
+#    notifyUrl: http://h7rmfa.natappfree.cc/wxpay/notify

@@ -52,9 +52,9 @@ public class JwtUtil {
                 .setSubject(subject)
                 .setIssuedAt(now)
                 .signWith(SignatureAlgorithm.HS256, key).claim("roles", roles);
-        if (ttl > 0) {
-            builder.setExpiration(new Date(nowMillis + ttl));
-        }
+//        if (ttl > 0) {
+//            builder.setExpiration(new Date(nowMillis + ttl));
+//        }
         return builder.compact();
     }
 

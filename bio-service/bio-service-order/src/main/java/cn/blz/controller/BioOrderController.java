@@ -4,6 +4,7 @@ import cn.blz.entity.BioOrder;
 import cn.blz.service.BioOrderService;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -80,20 +81,71 @@ public class BioOrderController {
      * @return 购物车json
      */
     @PostMapping("getOrderlistByUserId/{userId}")
-    public Map<String, Map<String,String>> getOrderlistByUserId(@PathVariable("userId") String userIdByToken) {
+    public Map<String, Map<String, String>> getOrderlistByUserId(@PathVariable("userId") String userIdByToken) {
         List<BioOrder> bioOrderList = this.bioOrderService.list(new QueryWrapper<BioOrder>().eq("member_id", userIdByToken));
-        Map<String, Map<String,String>> map = new HashMap<>();
+        Map<String, Map<String, String>> map = new HashMap<>();
         for (BioOrder order : bioOrderList) {
             Map<String, String> orderMap = new HashMap<>();
-            orderMap.put("createdTime",order.getCreatedTime().toString());
-            orderMap.put("orderTotal",String.valueOf(order.getOrderAmountTotal()));
-            orderMap.put("orderStatus",order.getOrderStatus().toString());
-            orderMap.put("productId",order.getProductId().toString());
-            orderMap.put("productNum",order.getProductCount().toString());
-            map.put(String.valueOf(order.getId()),orderMap);
+            orderMap.put("createdTime", order.getCreatedTime().toString());
+            orderMap.put("orderTotal", String.valueOf(order.getOrderAmountTotal()));
+            orderMap.put("orderStatus", order.getOrderStatus().toString());
+            orderMap.put("productId", order.getProductId().toString());
+            orderMap.put("productNum", order.getProductCount().toString());
+            map.put(String.valueOf(order.getId()), orderMap);
         }
         return map;
     }
 
+    /**
+     * 生成订单
+     *
+     * @param orderNo   订单编号
+     * @param userId    用户id
+     * @param addressId 地址id
+     * @param listJson  购物车参数
+     */
+    @PostMapping("generalOrder/{orderNo}/{userId}/{addressId}/{listJson}")
+    public void generalOrder(@PathVariable("orderNo") String orderNo, @PathVariable("userId") String userId, @PathVariable("addressId") Integer addressId, @PathVariable("listJson") String listJson) {
+        List<Map> list = JSON.parseArray(listJson, Map.class);
+        for (Map map : list) {
+            BioOrder bioOrder = new BioOrder();
+            bioOrder.setOrderNo(orderNo);
+            bioOrder.setMemberId(Integer.parseInt(userId));
+            bioOrder.setProductId(Integer.parseInt(String.valueOf(map.get("productId"))));
 
+            int productNum = Integer.parseInt(String.valueOf(map.get("productNum")));
+            bioOrder.setProductCount(productNum);
+
+            double productPrice = Double.parseDouble(String.valueOf(map.get("productPrice")));
+            bioOrder.setProductAmountTotal(productNum * productPrice);
+            bioOrder.setOrderAmountTotal(productNum * productPrice);
+
+            bioOrder.setAddressId(addressId);
+            bioOrder.setOrderSettlementTime(new Date());
+            bioOrder.setCreatedTime(new Date());
+
+            this.bioOrderService.save(bioOrder);
+        }
+    }
+
+    /**
+     * 用户支付成功更改支付状态
+     *
+     * @param orderNo 订单编号
+     */
+    @PostMapping("updateOrderStatus/{orderNo}")
+    public List<Integer> updateOrderStatus(@PathVariable("orderNo") String orderNo) {
+        System.out.println(orderNo);
+        List<Integer> relist = new ArrayList<>();
+        List<BioOrder> bioOrderList = this.bioOrderService.list(new QueryWrapper<BioOrder>().eq("order_no", orderNo));
+        for (BioOrder bioOrder : bioOrderList) {
+            relist.add(bioOrder.getProductId());
+            Map<String, String> map = new HashMap<>();
+            map.put("order_no",orderNo);
+            map.put("id",String.valueOf(bioOrder.getId()));
+            bioOrder.setOrderStatus(1);
+            this.bioOrderService.update(bioOrder, new UpdateWrapper<BioOrder>().allEq(map));
+        }
+        return relist;
+    }
 }

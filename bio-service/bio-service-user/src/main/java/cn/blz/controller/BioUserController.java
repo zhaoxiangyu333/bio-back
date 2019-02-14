@@ -19,9 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * (BioUser)表控制层
@@ -193,6 +191,7 @@ public class BioUserController {
         return null;
     }
 
+
     /**
      * 加入商品到缓存数据库中
      *
@@ -333,11 +332,9 @@ public class BioUserController {
             bioOrderProduct.setProductPrice(productMap.get("price"));
             bioOrderProduct.setProductImg(productMap.get("img"));
 
-
             relist.add(bioOrderProduct);
 
         }
-
         return JSON.toJSONString(new Result(true, StatusCode.OK, "获取用户订单成功", relist));
     }
 
@@ -347,6 +344,68 @@ public class BioUserController {
     public void delOrder() {
 
     }
+
+
+    /**
+     * 生成订单
+     *
+     * @param token     用户token
+     * @param addressId 地址id
+     * @return 订单编号
+     */
+    @PostMapping("generalOrder/{token}/{addressId}")
+    public String generalOrder(@PathVariable("token") String token, @PathVariable("addressId") Integer addressId) {
+        // 随机成成订单号
+        String orderNo = UUID.randomUUID().toString();
+        // 用户id
+        String userId = this.getUserIdByToken(token);
+
+
+        List<Map<String, String>> list = new ArrayList<>();
+        List<BioCart> bioCartList = JSONObject.parseArray(JSONObject.toJSONString(JSON.parseArray(this.redisUtil.get(1, REDISCART + userId))), BioCart.class);
+        for (int i = bioCartList.size() - 1; i >= 0; i--) {
+            if ("1".equals(bioCartList.get(i).getChecked())) {
+                Map<String, String> map = new HashMap<>();
+                map.put("productId", String.valueOf(bioCartList.get(i).getProductId()));
+                map.put("productNum", String.valueOf(bioCartList.get(i).getProductNum()));
+                map.put("productPrice", String.valueOf(bioCartList.get(i).getProductPrice()));
+                list.add(map);
+//                bioCartList.remove(bioCartList.get(i));
+            }
+        }
+
+        // 更新缓存数据库
+//        this.redisUtil.set(1, REDISCART + userId, JSON.toJSONString(bioCartList));
+
+        this.bioOrderService.generalOrder(orderNo, userId, addressId, JSON.toJSONString(list));
+
+        return JSON.toJSONString(new Result(true, StatusCode.OK, "添加未支付订单成功", orderNo));
+    }
+
+    // todo 支付接口
+    @PostMapping("payMent/{token}/{orderNo}")
+    public String payMent(@PathVariable("orderNo") String orderNo, @PathVariable("token") String token) {
+        List<Integer> integers = this.bioOrderService.updateOrderStatus(orderNo);
+
+        String userId = this.getUserIdByToken(token);
+        List<BioCart> bioCartList = JSONObject.parseArray(JSONObject.toJSONString(
+                JSON.parseArray(this.redisUtil.get(1, REDISCART + userId))), BioCart.class);
+        System.out.println(integers.size());
+        for (Integer ig : integers) {
+            for (int i = bioCartList.size() - 1; i >= 0; i--) {
+                if (ig.equals(bioCartList.get(i).getProductId())) {
+                    bioCartList.remove(bioCartList.get(i));
+                }
+            }
+        }
+
+        // 更新缓存数据库
+        this.redisUtil.set(1, REDISCART + userId, JSON.toJSONString(bioCartList));
+
+
+        return JSON.toJSONString(new Result(true, StatusCode.OK, "支付接口功能暂时未做", null));
+    }
+
 
     /**
      * 将数据库未支付的订单加入到redis中

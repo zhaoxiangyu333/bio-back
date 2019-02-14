@@ -11,5 +11,12 @@
 
     <artifactId>bio-service-order</artifactId>
 
+    <dependencies>
+        <!--微信支付依赖-->
+        <!--<dependency>-->
+            <!--<groupId>com.github.wxpay</groupId>-->
+            <!--<artifactId>wxpay-sdk</artifactId>-->
+        <!--</dependency>-->
+    </dependencies>
 
 </project>
