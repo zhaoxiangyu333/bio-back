@@ -1,6 +1,6 @@
 # Bio
 
-> Bio后端微服务项目，也将作为毕业设计，[个人博客](www.blzcat.cn)
+> Bio后端微服务项目，也将作为毕业设计，[个人博客](http://www.blzcat.cn)
 
 **SpringCloud的微服务全栈项目后端**
 
