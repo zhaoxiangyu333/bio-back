@@ -1,6 +1,6 @@
 # Bio
 
-> Bio后端微服务项目，也将作为毕业设计，[个人博客](www.blzcat.cn)
+> Bio后端微服务项目，也将作为毕业设计，[个人博客](http://www.blzcat.cn)
 
 **SpringCloud的微服务全栈项目后端**
 
@@ -60,6 +60,8 @@
 
 ### 项目结构图
 
-![](./bio-back.png)
+![](https://blzcatblogsimg-1255544391.cos.ap-shanghai.myqcloud.com/bio-back.png)
 
-### 未完待续
+### 基于spark的商品推荐
+#### 所需table建表脚本（脚本在根目录，名称biorecommend.sql）
+`hive -f biorecommend.sql`

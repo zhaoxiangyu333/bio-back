@@ -41,6 +41,8 @@
         <swagger.version>2.9.2</swagger.version>
         <jjwt.version>0.6.0</jjwt.version>
         <jedis.version>2.10.0</jedis.version>
+        <spark.version>1.6.2</spark.version>
+        <jersey.version>1.17.1</jersey.version>
     </properties>
 
     <dependencyManagement>
@@ -115,6 +117,37 @@
                 <groupId>com.github.wxpay</groupId>
                 <artifactId>wxpay-sdk</artifactId>
                 <version>0.0.3</version>
+            </dependency>
+            <!--spark-->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming-kafka_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-mllib_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-servlet</artifactId>
+                <version>${jersey.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
