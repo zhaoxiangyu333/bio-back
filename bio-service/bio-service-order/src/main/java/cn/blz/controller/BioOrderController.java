@@ -25,6 +25,8 @@ public class BioOrderController {
     @Resource
     private BioOrderService bioOrderService;
 
+    private final static String NULL = "null";
+
     /**
      * 从数据库获取
      *
@@ -53,9 +55,9 @@ public class BioOrderController {
      */
     @PostMapping("addRedisProductToMysql/{userId}/{cartProductString}")
     public void addRedisProductToMysql(@PathVariable("userId") String userId, @PathVariable("cartProductString") String cartProductString) {
-        if (!"null".equals(cartProductString)) {
+        if (!NULL.equals(cartProductString)) {
             // todo: 根据商品字符串获取商品集合
-            System.out.println("未完成将缓存数据里面的商品添加到mysql");
+            System.out.println("未完成将用户id：" + userId + " 的将缓存数据里面的商品添加到mysql");
         }
 //
 //        BioOrder bioOrder = new BioOrder();
@@ -141,8 +143,8 @@ public class BioOrderController {
         for (BioOrder bioOrder : bioOrderList) {
             relist.add(bioOrder.getProductId());
             Map<String, String> map = new HashMap<>();
-            map.put("order_no",orderNo);
-            map.put("id",String.valueOf(bioOrder.getId()));
+            map.put("order_no", orderNo);
+            map.put("id", String.valueOf(bioOrder.getId()));
             bioOrder.setOrderStatus(1);
             this.bioOrderService.update(bioOrder, new UpdateWrapper<BioOrder>().allEq(map));
         }

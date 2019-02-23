@@ -25,7 +25,9 @@ public class BioGatewaySwagger2Application {
         SpringApplication.run(BioGatewaySwagger2Application.class, args);
     }
 
-
+    /**
+     * 权限过滤
+     */
     @Component
     @Primary
     public class GatewaySwaggerResourcesProvider implements SwaggerResourcesProvider {

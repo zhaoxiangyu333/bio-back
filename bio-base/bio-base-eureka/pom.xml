@@ -11,7 +11,6 @@
 
     <artifactId>bio-base-eureka</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

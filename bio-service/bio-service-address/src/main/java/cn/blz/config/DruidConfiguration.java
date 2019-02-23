@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 /**
  * 阿里巴巴数据库连接池配置
+ * @author blz
  */
 @Slf4j
 @SpringBootConfiguration

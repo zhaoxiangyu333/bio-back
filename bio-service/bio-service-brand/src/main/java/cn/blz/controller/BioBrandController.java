@@ -51,7 +51,6 @@ public class BioBrandController {
                 .orderByDesc("sort")
                 .last("limit 4"));
 
-
         List<BioBrandProducts> reList = new ArrayList<>();
 
         for (BioBrand bioBrand : list) {

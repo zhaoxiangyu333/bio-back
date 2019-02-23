@@ -39,13 +39,12 @@ public class BioAddressController {
 
     /**
      * 根据地址id获取地址
+     *
      * @param addressId 地址id
      * @return 地址信息
      */
     @PostMapping("addressById/{addressId}")
     public String addressById(@PathVariable("addressId") Integer addressId) {
-        return JSON.toJSONString(new Result(true, StatusCode.OK,"获取对应id的地址成功", this.bioAddressService.getById(addressId)));
+        return JSON.toJSONString(new Result(true, StatusCode.OK, "获取对应id的地址成功", this.bioAddressService.getById(addressId)));
     }
-
-
 }

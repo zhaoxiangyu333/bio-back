@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+/**
+ * @author blz
+ */
 @EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("cn.blz.dao")

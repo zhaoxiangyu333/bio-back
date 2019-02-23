@@ -11,5 +11,4 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2019-02-09 14:34:10
  */
 public interface BioUserDao extends BaseMapper<BioUser>{
-
 }

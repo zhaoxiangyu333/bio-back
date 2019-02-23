@@ -22,6 +22,7 @@ public class BioUserApplication {
 
     /**
      * 哈希密码加密
+     *
      * @return BCryptPasswordEncoder
      */
     @Bean

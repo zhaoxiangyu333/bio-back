@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author blz
+ */
 @FeignClient("specificate")
 public interface BioSpecificateService {
     /**
