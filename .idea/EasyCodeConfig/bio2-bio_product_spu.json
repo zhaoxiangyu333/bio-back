@@ -61,6 +61,6 @@
   "pkColumn" : null,
   "otherColumn" : null,
   "savePackageName" : "cn.blz",
-  "savePath" : "./bio-service/bio-service-product/src/main/java/cn/blz",
-  "saveModelName" : "bioserviceproduct"
+  "savePath" : "./bio-search/src/main/java/cn/blz",
+  "saveModelName" : "biosearch"
 }

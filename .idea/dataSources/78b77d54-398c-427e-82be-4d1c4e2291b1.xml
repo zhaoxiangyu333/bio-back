@@ -918,9 +918,7 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="3" name="bio_address">
-      <Comment> </Comment>
-    </table>
+    <table id="231" parent="3" name="bio_address"/>
     <table id="232" parent="3" name="bio_brand">
       <Comment>bio_brand 商品品牌</Comment>
     </table>
@@ -942,9 +940,7 @@
     <table id="238" parent="3" name="bio_specificate_value">
       <Comment>bio_specificate_value 商品属性值表</Comment>
     </table>
-    <table id="239" parent="3" name="bio_user">
-      <Comment> </Comment>
-    </table>
+    <table id="239" parent="3" name="bio_user"/>
     <column id="240" parent="231" name="id">
       <Position>1</Position>
       <Comment>id</Comment>

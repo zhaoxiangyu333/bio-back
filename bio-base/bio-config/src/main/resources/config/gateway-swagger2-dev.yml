@@ -6,13 +6,13 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:20101/eureka
+      defaultZone: http://localhost:20101/eureka
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.1
+    ip-address: localhost
     instance-id: ${spring.application.name}:${server.port}
-    status-page-url: http://127.0.0.1:${server.port}/swagger-ui.html
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
 hystrix:
   command:
     default:

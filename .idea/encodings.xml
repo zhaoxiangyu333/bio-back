@@ -18,5 +18,6 @@
     <file url="file://$PROJECT_DIR$/bio-service/bio-service-product" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bio-service/bio-service-specificate" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bio-service/bio-service-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bio-test" charset="UTF-8" />
   </component>
 </project>

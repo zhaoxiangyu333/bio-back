@@ -1,2 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
 /bioback.iml
+.DS_Store
+.idea/dataSources.local.xml
+.idea/workspace.xml
+bio-base/bio-base-eureka/target/
+bio-base/bio-config/target/
+bio-common/target/
+bio-recommend/.DS_Store
+bio-recommend/src/main/resources/
+bio-search/target/
+bio-service/bio-service-brand/target/
+bio-service/bio-service-order/src/main/java/cn/blz/utils/

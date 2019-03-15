@@ -39,7 +39,7 @@
  mysql            | 3306、3307、3308、3309 | 3306属于ambari<br>3307、3308、3309 PXC分布式数据库 |
  registry         | 5000                   | 本地bio项目的仓库                                  |
  redis            | 6379                   | 缓存数据库                                         |
- elasticsearch    | 9200、9300             | 9200：客户端、9300：集群通信                       |
+ elasticsearch    | 9100、9200、9300             | 9100：elhead、9200：客户端、9300：集群通信                       |
  rancher          | 20000                  | docker-web-ui                                      |
  bio后端项目端口  |                        |                                                    |
  eureka           | 20101                  | 注册中心                                           |

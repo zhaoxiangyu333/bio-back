@@ -14,8 +14,8 @@
         <module>bio-gateway-swagger2</module>
         <module>bio-base</module>
         <module>bio-common</module>
-        <module>bio-search</module>
         <module>bio-recommend</module>
+        <module>bio-search</module>
     </modules>
 
     <name>bio-back</name>

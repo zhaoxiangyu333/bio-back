@@ -24,6 +24,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bioeureka" target="1.8" />
+      <module name="biotest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -46,6 +47,7 @@
       <module name="bioserviceproduct" options="-parameters" />
       <module name="bioservicespecificate" options="-parameters" />
       <module name="bioserviceuser" options="-parameters" />
+      <module name="biotest" options="-parameters" />
     </option>
   </component>
 </project>
