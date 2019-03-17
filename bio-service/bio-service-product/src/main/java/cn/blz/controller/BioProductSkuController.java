@@ -3,6 +3,7 @@ package cn.blz.controller;
 import cn.blz.entity.*;
 import cn.blz.service.BioProductSkuService;
 import cn.blz.service.BioProductSpuService;
+import cn.blz.service.BioSearchService;
 import cn.blz.service.BioSpecificateService;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -32,6 +33,9 @@ public class BioProductSkuController {
     private BioSpecificateService bioSpecificateService;
     @Resource
     private BioProductSpuService bioProductSpuService;
+    @Resource
+    private BioSearchService bioSearchService;
+
 
     /**
      * 获取热门商品
@@ -122,6 +126,27 @@ public class BioProductSkuController {
         return JSON.toJSONString(reList);
     }
 
+    // todo:给前端声明这部分接口
+
+    /**
+     * 根据搜索关键词获取商品
+     *
+     * @param title 搜索关键词
+     * @return 商品
+     */
+    @GetMapping("getByTitleOrContentLike/{title}")
+    public String getByTitleOrContentLike(@PathVariable("title") String title) {
+        List<Integer> idList = this.bioSearchService.getByTitleOrContentLike(title);
+
+        List<BioProductSku> reList = new ArrayList<>();
+        for (Integer i : idList) {
+            BioProductSku bioProductSku = this.bioProductSkuService.getOne(new QueryWrapper<BioProductSku>().eq("id", i));
+            reList.add(bioProductSku);
+        }
+        return JSON.toJSONString(new Result(true, StatusCode.OK, "搜索成功", reList));
+    }
+
+    // 自定义辅助函数*************************************
 
     private List<BioProductSkuSpecificate> getReListBySkuList(List<BioProductSku> list) {
         List<BioProductSkuSpecificate> reList = new ArrayList<>();
@@ -156,4 +181,5 @@ public class BioProductSkuController {
 
         return bioProductSkuSpecificate;
     }
+    // ***********************************************
 }
